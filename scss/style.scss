@@ -7,7 +7,7 @@
 
 .container {
   display: grid;
-  min-height: 100vh;
+  // min-height: 100vh;
   grid:
     "pic head" 25rem
     "aside main" 1fr
@@ -25,6 +25,7 @@
 }
 
 header {
+  max-width: 100wh;
   grid-area: head;
   background: linear-gradient(to right, var(--primary), var(--light));
   color: white;
@@ -44,8 +45,9 @@ header {
     letter-spacing: 2.5rem;
     font-weight: 300;
     @include xs {
-      font-size: 4rem;
-      line-height: 5rem;
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+      letter-spacing: 1.8rem;
     }
   }
   p {
@@ -62,6 +64,9 @@ header {
   justify-content: center;
   align-items: center;
   border-right: 1px solid #ddd;
+  @include xs {
+    padding: 3rem;
+  }
   img {
     border-radius: 50%;
     filter: grayscale(100%);
@@ -73,6 +78,9 @@ aside {
   background-color: var(--background);
   border-right: 1px solid #ddd;
   padding: 5rem;
+  @include xs {
+    padding: 3rem 2rem 0rem 2rem;
+  }
   .block {
     margin-bottom: 3rem;
     border-bottom: 1px solid #ddd;
@@ -135,10 +143,10 @@ main {
   grid-area: main;
   padding: 5rem;
   @include xs {
-    padding: 5rem 3rem;
+    padding: 3rem 2rem;
   }
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   p {
     letter-spacing: 0.1rem;
@@ -147,7 +155,7 @@ main {
     font-style: italic;
   }
   ul {
-    margin-left: 1.5rem;
+    // margin-left: 1.4rem;
     border-left: 1px solid #ddd;
     li {
       padding: 3rem;
@@ -156,6 +164,9 @@ main {
       position: relative;
       display: flex;
       align-items: center;
+      @include xs {
+        padding: 2rem;
+      }
       .bar-skill {
         position: relative;
         width: 15rem;
@@ -192,6 +203,9 @@ main {
         position: absolute;
         left: -1.3rem;
         top: 2.7rem;
+        @include xs {
+          top: inherit;
+        }
       }
     }
   }
@@ -207,6 +221,9 @@ footer {
   padding: 5rem;
   text-align: center;
   color: white;
+  @include xs {
+    padding: 1rem;
+  }
   h2 {
     margin-bottom: 3rem;
   }
@@ -240,11 +257,11 @@ footer {
     input {
       outline: 0;
       border: 0;
-      min-width: 400px;
+      min-width: 40rem;
       padding: 1rem 2rem;
       line-height: 2rem;
       @include xs {
-        min-width: 20rem;
+        min-width: 18rem;
       }
       &::placeholder {
         color: var(--text);
